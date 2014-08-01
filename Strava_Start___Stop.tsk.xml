@@ -1,0 +1,21 @@
+<TaskerData sr="" dvi="1" tv="4.4u1m">
+	<Task sr="task4">
+		<cdate>1406330994184</cdate>
+		<edate>1406331189535</edate>
+		<id>4</id>
+		<nme>Strava Start / Stop</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="6">
+			<code>877</code>
+			<Str sr="arg0" ve="3">android.intent.action.RUN</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">http://strava.com/nfc/record/toggle</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+	</Task>
+</TaskerData>

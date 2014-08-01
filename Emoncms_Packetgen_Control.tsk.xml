@@ -1,0 +1,103 @@
+<TaskerData sr="" dvi="1" tv="4.4u1m">
+	<Task sr="task13">
+		<cdate>1406806733571</cdate>
+		<edate>1406906907990</edate>
+		<id>13</id>
+		<nme>Emoncms Packetgen Control</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="6">
+			<code>547</code>
+			<label>Your Raspberry IP e.g http://192.168.0.6</label>
+			<Str sr="arg0" ve="3">%host</Str>
+			<Str sr="arg1" ve="3">http://your.raspberrypi.IP</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="6">
+			<code>547</code>
+			<label>Your Raspberry Pi local r/w API key</label>
+			<Str sr="arg0" ve="3">%apikey</Str>
+			<Str sr="arg1" ve="3">Xxxxxxxxxx</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="6">
+			<code>547</code>
+			<label>Packetgen variable ID to be set (start at 0)</label>
+			<Str sr="arg0" ve="3">%packetgenfeed</Str>
+			<Str sr="arg1" ve="3">X</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="6">
+			<code>547</code>
+			<label>Value to be set</label>
+			<Str sr="arg0" ve="3">%value</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act4" ve="6">
+			<code>118</code>
+			<label>Perform API call GET request and save output to log</label>
+			<Str sr="arg0" ve="3">%host/emoncms/packetgen/update.json?id=%packetgenfeed&amp;value=%value&amp;apikey=%apikey</Str>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="10"/>
+			<Str sr="arg6" ve="3">text/plain</Str>
+			<Str sr="arg7" ve="3">%HTTPD</Str>
+			<Int sr="arg8" val="0"/>
+		</Action>
+		<Action sr="act5" ve="6">
+			<code>523</code>
+			<label>Success Notification</label>
+			<Str sr="arg0" ve="3">Success!</Str>
+			<Str sr="arg1" ve="3">Packetgen Variable %packetgenfeed set to %value</Str>
+			<Img sr="arg2" ve="2"/>
+			<Int sr="arg3" val="16"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HTTPD</lhs>
+					<op>2</op>
+					<rhs>"packet updated"</rhs>
+				</Condition>
+			</ConditionList>
+			<ListElementItem sr="item0">
+				<label></label>
+				<Img sr="icon" ve="2">
+					<nme>cust_transparent</nme>
+				</Img>
+			</ListElementItem>
+		</Action>
+		<Action sr="act6" ve="6">
+			<code>523</code>
+			<label>Success Notification</label>
+			<Str sr="arg0" ve="3">FAIL</Str>
+			<Str sr="arg1" ve="3">Packetgen variable NOT set, are you connected to the Internet?</Str>
+			<Img sr="arg2" ve="2"/>
+			<Int sr="arg3" val="16"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HTTPD</lhs>
+					<op>3</op>
+					<rhs>"packet updated"</rhs>
+				</Condition>
+			</ConditionList>
+			<ListElementItem sr="item0">
+				<label></label>
+				<Img sr="icon" ve="2">
+					<nme>cust_transparent</nme>
+				</Img>
+			</ListElementItem>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>hl_aaa_nixx_button</nme>
+		</Img>
+	</Task>
+</TaskerData>
