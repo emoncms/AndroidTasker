@@ -1,0 +1,158 @@
+<TaskerData sr="" dvi="1" tv="4.4u2m">
+	<Task sr="task13">
+		<cdate>1406821396549</cdate>
+		<edate>1407061597000</edate>
+		<id>13</id>
+		<nme>Emoncms Power Used &amp; Power Now Notification</nme>
+		<pri>10</pri>
+		<Kid sr="Kid">
+			<launchID>9</launchID>
+			<pkg>com.emoncms.powerusednotify</pkg>
+			<vnme>1.0</vnme>
+			<vnum>2</vnum>
+		</Kid>
+		<Action sr="act0" ve="6">
+			<code>547</code>
+			<label>Your emoncms r/w API key</label>
+			<Str sr="arg0" ve="3">%apikey</Str>
+			<Str sr="arg1" ve="3">Xxxxccccc</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="6">
+			<code>547</code>
+			<label>Emoncms feed ID</label>
+			<Str sr="arg0" ve="3">%kwh_feed</Str>
+			<Str sr="arg1" ve="3">X</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act10" ve="6">
+			<code>590</code>
+			<label>Remove " " from power</label>
+			<Str sr="arg0" ve="3">%power</Str>
+			<Str sr="arg1" ve="3">"</Str>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act11" ve="6">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%power_now</Str>
+			<Str sr="arg1" ve="3">%power2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act12" ve="6">
+			<code>523</code>
+			<label>Send Android notification</label>
+			<Str sr="arg0" ve="3">So far today %KWHD kWh</Str>
+			<Str sr="arg1" ve="3">Â£%day_cost Power now: %power_now W</Str>
+			<Img sr="arg2" ve="2"/>
+			<Int sr="arg3" val="19"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="4"/>
+		</Action>
+		<Action sr="act13" ve="6">
+			<code>11539</code>
+			<label>Send pebble watch notification using pebble notifier plug-in</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.dattasmoon.pebble.plugin.INT_TYPE>0</com.dattasmoon.pebble.plugin.INT_TYPE>
+					<com.dattasmoon.pebble.plugin.INT_TYPE-type>java.lang.Integer</com.dattasmoon.pebble.plugin.INT_TYPE-type>
+					<com.dattasmoon.pebble.plugin.INT_VERSION_CODE>22</com.dattasmoon.pebble.plugin.INT_VERSION_CODE>
+					<com.dattasmoon.pebble.plugin.INT_VERSION_CODE-type>java.lang.Integer</com.dattasmoon.pebble.plugin.INT_VERSION_CODE-type>
+					<com.dattasmoon.pebble.plugin.STRING_BODY>%KWHD kWh Â£%day_cost
+Now: %power_now W</com.dattasmoon.pebble.plugin.STRING_BODY>
+					<com.dattasmoon.pebble.plugin.STRING_BODY-type>java.lang.String</com.dattasmoon.pebble.plugin.STRING_BODY-type>
+					<com.dattasmoon.pebble.plugin.STRING_TITLE>So far today:</com.dattasmoon.pebble.plugin.STRING_TITLE>
+					<com.dattasmoon.pebble.plugin.STRING_TITLE-type>java.lang.String</com.dattasmoon.pebble.plugin.STRING_TITLE-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Notification with title: "So far today:" and </com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>com.dattasmoon.pebble.plugin.STRING_TITLE com.dattasmoon.pebble.plugin.STRING_BODY</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.dattasmoon.pebble.plugin</Str>
+			<Str sr="arg2" ve="3">Pebble Notifier</Str>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="6">
+			<code>547</code>
+			<label>Emoncms feed power now Id</label>
+			<Str sr="arg0" ve="3">%power_feed</Str>
+			<Str sr="arg1" ve="3">X</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="6">
+			<code>547</code>
+			<label>Emoncms server http address</label>
+			<Str sr="arg0" ve="3">%emoncms_server</Str>
+			<Str sr="arg1" ve="3">http://emoncms.org </Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act4" ve="6">
+			<code>118</code>
+			<label>Get current Kwh value from emoncms</label>
+			<Str sr="arg0" ve="3">%emoncms_server/feed/value.json?&amp;apikey=%apikey&amp;id=%kwh_feed</Str>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="10"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+		</Action>
+		<Action sr="act5" ve="6">
+			<code>597</code>
+			<label>Format result kwh</label>
+			<Str sr="arg0" ve="3">%HTTPD</Str>
+			<Int sr="arg1" val="2"/>
+			<Int sr="arg2" val="4"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">%KWHD</Str>
+		</Action>
+		<Action sr="act6" ve="6">
+			<code>547</code>
+			<label>Energy unit tariff Â£</label>
+			<Str sr="arg0" ve="3">%KWHRATE</Str>
+			<Str sr="arg1" ve="3">0.14</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act7" ve="6">
+			<code>547</code>
+			<label>Calculate day cost</label>
+			<Str sr="arg0" ve="3">%day_cost</Str>
+			<Str sr="arg1" ve="3">%KWHD * %KWHRATE </Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act8" ve="6">
+			<code>118</code>
+			<label>Get current power value from emoncms</label>
+			<Str sr="arg0" ve="3">%emoncms_server/feed/value.json?&amp;apikey=%apikey&amp;id=%power_feed</Str>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="10"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+		</Action>
+		<Action sr="act9" ve="6">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%power</Str>
+			<Str sr="arg1" ve="3">%HTTPD</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>hl_aaa_nixx_bolt</nme>
+		</Img>
+	</Task>
+</TaskerData>
