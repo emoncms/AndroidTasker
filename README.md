@@ -13,3 +13,8 @@ To import tasks into tasker:
 * Long press on Tasks tab and select Import
 * Select the task to import
 
+# Tasker Emoncms notification blog post:
+http://openenergymonitor.blogspot.com/2014/08/android-tasker-pebble-smartwatch.html
+
+# Tasker Emoncms packetgen heating control blog post:
+http://openenergymonitor.blogspot.com/2014/08/pebble-smart-watch-emoncms-heating.html
